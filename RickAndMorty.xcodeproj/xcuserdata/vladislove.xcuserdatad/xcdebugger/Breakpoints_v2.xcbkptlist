@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "FE6696BB-348F-444D-BA91-2FC0204D3F2E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "684EF4F5-C4A7-41E8-8EE5-C4C5B80EA63B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ApiTest2/ViewControllers/Views/CharacterLocationCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "CharacterLocationCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "684EF4F5-C4A7-41E8-8EE5-C4C5B80EA63B - e1ea6a6b2f9ad937"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ApiTest2.CharacterLocationCell.nameTypeLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ApiTest2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladislove/Desktop/Projects/ApiTest2/ApiTest2/ViewControllers/Views/CharacterLocationCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "684EF4F5-C4A7-41E8-8EE5-C4C5B80EA63B - d0dd71651f946503"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ApiTest2.CharacterLocationCell.nameTypeLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ApiTest2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladislove/Desktop/Projects/ApiTest2/ApiTest2/ViewControllers/Views/CharacterLocationCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "684EF4F5-C4A7-41E8-8EE5-C4C5B80EA63B - 8b85cd95cd5667e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ApiTest2.CharacterLocationCell.nameTypeLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ApiTest2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladislove/Desktop/Projects/ApiTest2/ApiTest2/ViewControllers/Views/CharacterLocationCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "684EF4F5-C4A7-41E8-8EE5-C4C5B80EA63B - 3b44d06ad5eb18c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ApiTest2.CharacterLocationCell.nameTypeLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ApiTest2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladislove/Desktop/Projects/ApiTest2/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "684EF4F5-C4A7-41E8-8EE5-C4C5B80EA63B - 7dc60eff853b769d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ApiTest2.CharacterLocationCell.init(frame: __C.CGRect) -&gt; ApiTest2.CharacterLocationCell"
+                  moduleName = "ApiTest2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladislove/Desktop/Projects/ApiTest2/ApiTest2/ViewControllers/Views/CharacterLocationCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "684EF4F5-C4A7-41E8-8EE5-C4C5B80EA63B - 125cbb67343a89f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ApiTest2.CharacterLocationCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ApiTest2.CharacterLocationCell&gt;"
+                  moduleName = "ApiTest2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladislove/Desktop/Projects/ApiTest2/ApiTest2/ViewControllers/Views/CharacterLocationCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "191C8E40-FBE2-40C8-ACBD-EA05C2ED8AA7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ApiTest2/ViewControllers/Views/CharacterLocationCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "CharacterLocationCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "191C8E40-FBE2-40C8-ACBD-EA05C2ED8AA7 - 8467eafb808d5d92"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ApiTest2.CharacterLocationCell.nameLocationLabel.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ApiTest2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladislove/Desktop/Projects/ApiTest2/ApiTest2/ViewControllers/Views/CharacterLocationCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "191C8E40-FBE2-40C8-ACBD-EA05C2ED8AA7 - bf53851c3770f96e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ApiTest2.CharacterLocationCell.nameLocationLabel.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ApiTest2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladislove/Desktop/Projects/ApiTest2/ApiTest2/ViewControllers/Views/CharacterLocationCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "191C8E40-FBE2-40C8-ACBD-EA05C2ED8AA7 - 453e2c743cecfb2b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ApiTest2.CharacterLocationCell.nameLocationLabel.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ApiTest2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladislove/Desktop/Projects/ApiTest2/ApiTest2/ViewControllers/Views/CharacterLocationCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "191C8E40-FBE2-40C8-ACBD-EA05C2ED8AA7 - aca1c22864de8b87"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ApiTest2.CharacterLocationCell.nameLocationLabel.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ApiTest2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladislove/Desktop/Projects/ApiTest2/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "191C8E40-FBE2-40C8-ACBD-EA05C2ED8AA7 - 7dc60eff853b76fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ApiTest2.CharacterLocationCell.init(frame: __C.CGRect) -&gt; ApiTest2.CharacterLocationCell"
+                  moduleName = "ApiTest2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladislove/Desktop/Projects/ApiTest2/ApiTest2/ViewControllers/Views/CharacterLocationCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "191C8E40-FBE2-40C8-ACBD-EA05C2ED8AA7 - 125cbb67343a8fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ApiTest2.CharacterLocationCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ApiTest2.CharacterLocationCell&gt;"
+                  moduleName = "ApiTest2"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladislove/Desktop/Projects/ApiTest2/ApiTest2/ViewControllers/Views/CharacterLocationCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
