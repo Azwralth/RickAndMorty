@@ -9,7 +9,7 @@ import Foundation
 
 struct RMCharacter: Decodable {
     let info: Info
-    let results: [Character]
+    var results: [Character]
 }
 
 struct Info: Decodable {
@@ -21,7 +21,7 @@ struct Info: Decodable {
 struct Character: Decodable {
     let id: Int
     let name: String
-    let status: String
+    let status: String?
     let species: String
     let type: String
     let gender: String
@@ -31,8 +31,6 @@ struct Character: Decodable {
     var description: String {
         """
         Name: \(name)
-        
-        Status: \(status)
         
         Gender: \(gender)
         

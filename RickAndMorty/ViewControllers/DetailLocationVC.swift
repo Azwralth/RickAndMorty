@@ -38,10 +38,10 @@ class DetailLocationVC: UIViewController {
     
     private func setCharacters() {
         location.residents.forEach { characterURL in
-            networkManager.fetch(Character.self, from: characterURL) { [weak self] result in
+            networkManager.fetch(Character.self, from: characterURL) { [unowned self] result in
                 switch result {
                 case .success(let character):
-                    self?.characters.append(character)
+                    self.characters.append(character)
                 case .failure(let error):
                     print(error)
                 }
@@ -59,7 +59,7 @@ extension DetailLocationVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "viewCharacterLocation", for: indexPath) as! CharacterLocationCell
         let characterURL = location.residents[indexPath.item]
-        networkManager.fetch(Character.self, from: characterURL) { result in
+        NetworkManager.shared.fetch(Character.self, from: characterURL) { result in
             switch result {
             case .success(let character):
                 cell.configure(with: character)

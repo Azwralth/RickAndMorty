@@ -19,9 +19,10 @@ class LocationCell: UICollectionViewCell {
         layer.borderColor = UIColor.lightGray.cgColor
     }
     
-    func configure(with location: Location) {
+    func configure(with location: Location?) {
+        guard let location else { return }
         nameLocationLabel.text = location.name
-        nameTypeLabel.text = "Type: \(location.type)"
+        nameTypeLabel.text = location.type
         dimensionLabel.text = location.dimension
     }
 }

@@ -9,8 +9,10 @@ import UIKit
 
 final class LocationCollection: UICollectionViewController {
     
+    @IBOutlet var nextButton: UIBarButtonItem!
+    @IBOutlet var previewButton: UIBarButtonItem!
+    
     private var searchController = UISearchController(searchResultsController: nil)
-    private var locations: [Location] = []
     private var rmLocations: RMLocation?
     private var filterLocations: [Location] = []
     private let networkManager = NetworkManager.shared
@@ -30,7 +32,7 @@ final class LocationCollection: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
-        let location = isFiltering ? filterLocations[indexPath.item] : locations[indexPath.item]
+        let location = isFiltering ? filterLocations[indexPath.item] : rmLocations?.results[indexPath.item]
         if let detailVC = segue.destination as? DetailLocationVC {
             detailVC.location = location
         }
@@ -38,7 +40,7 @@ final class LocationCollection: UICollectionViewController {
     
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        isFiltering ? filterLocations.count : locations.count
+        isFiltering ? filterLocations.count : rmLocations?.results.count ?? 0
     }
     
     override func collectionView(
@@ -50,9 +52,15 @@ final class LocationCollection: UICollectionViewController {
             for: indexPath
         )
         guard let cell = cell as? LocationCell else { return UICollectionViewCell() }
-        let location = isFiltering ? filterLocations[indexPath.item] : locations[indexPath.item]
+        let location = isFiltering ? filterLocations[indexPath.item] : rmLocations?.results[indexPath.item]
         cell.configure(with: location)
         return cell
+    }
+    
+    @IBAction func updateData(_ sender: UIBarButtonItem) {
+        sender.tag == 1
+        ? fetchLocation(from: rmLocations?.info.next)
+        : fetchLocation(from: rmLocations?.info.prev)
     }
     
     private func setupSearchController() {
@@ -64,16 +72,13 @@ final class LocationCollection: UICollectionViewController {
     }
     
     private func fetchLocation(from url: URL?) {
-        networkManager.fetch(RMLocation.self, from: url) { [weak self] result in
+        networkManager.fetch(RMLocation.self, from: url) { [unowned self] result in
             switch result {
-            case .success(let locationData):
-                self?.rmLocations = locationData
-                guard let currentLocation = self?.locations.count else { return }
-                self?.locations.append(contentsOf: locationData.results)
-                let indexPath = (currentLocation..<(self?.locations.count ?? 0)).map { IndexPath(item: $0, section: 0)}
-                self?.collectionView.performBatchUpdates {
-                    self?.collectionView.insertItems(at: indexPath)
-                }
+            case .success(let rickAndMortyLocation):
+                rmLocations = rickAndMortyLocation
+                collectionView.reloadData()
+                nextButton.isEnabled = rmLocations?.info.next != nil
+                previewButton.isEnabled = rmLocations?.info.prev != nil
             case .failure(let error):
                 print(error)
             }
@@ -86,14 +91,8 @@ extension LocationCollection: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: view.window?.windowScene?.screen.bounds.width ?? 0, height: 100)
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let lastItem = locations.count - 1
-        if indexPath.item == lastItem, let nextPageURL = rmLocations?.info.next {
-            fetchLocation(from: nextPageURL)
-        }
-    }
 }
+
 // MARK: - UISearchResultsUpdating
 extension LocationCollection: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
@@ -101,9 +100,9 @@ extension LocationCollection: UISearchResultsUpdating {
     }
     
     func filterContentForSearchText(_ searchText: String) {
-        filterLocations = locations.filter({ location in
+        filterLocations = rmLocations?.results.filter({ location in
             location.name.lowercased().contains(searchText.lowercased())
-        })
+        }) ?? []
         
         collectionView.reloadData()
     }

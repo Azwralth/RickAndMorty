@@ -19,13 +19,18 @@ final class CharacterCell: UICollectionViewCell {
         configureShadow()
     }
     
-    func configure(with character: Character) {
+    override func prepareForReuse() {
+        characterImage.image = nil
+    }
+    
+    func configure(with character: Character?) {
+        guard let character else { return }
         nameLabel.text = character.name
-        statusLabel.text = "Status: \(character.status)"
-        networkManager.fetchImage(from: character.image) { [unowned self] result in
+        statusLabel.text = "Status: \(character.status ?? "")"
+        networkManager.fetchImage(from: character.image) { [weak self] result in
             switch result {
             case .success(let imageData):
-                characterImage.image = UIImage(data: imageData)
+                self?.characterImage.image = UIImage(data: imageData)
             case .failure(let error):
                 print(error)
             }

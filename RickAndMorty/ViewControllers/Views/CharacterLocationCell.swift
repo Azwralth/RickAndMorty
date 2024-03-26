@@ -22,7 +22,7 @@ class CharacterLocationCell: UICollectionViewCell {
     
     func configure(with character: Character) {
         nameLabel.text = character.name
-        statusLabel.text = "Status: \(character.status)"
+        statusLabel.text = "Status: \(character.status ?? "")"
         networkManager.fetchImage(from: character.image) { [unowned self] result in
             switch result {
             case .success(let imageData):
