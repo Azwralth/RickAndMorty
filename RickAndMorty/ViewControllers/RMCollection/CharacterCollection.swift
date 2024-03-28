@@ -117,6 +117,6 @@ extension CharacterCollection: UISearchResultsUpdating {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension CharacterCollection: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: (view.window?.windowScene?.screen.bounds.width ?? 0) / 2 - 22, height: 245)
+        CGSize(width: (view.window?.windowScene?.screen.bounds.width ?? 0) / 2 - 22, height: 235)
     }
 }
