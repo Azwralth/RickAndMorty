@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class DetailCharacterVC: UIViewController {
     
@@ -19,14 +20,18 @@ final class DetailCharacterVC: UIViewController {
         super.viewDidLoad()
         
         descriptionCharacterLabel.text = character.description
-        networkManager.fetchImage(from: character.image) { [unowned self] result in
-            switch result {
-            case .success(let imageData):
-                characterImage.image = UIImage(data: imageData)
-            case .failure(let error):
-                print(error)
-            }
-        }
+        let processor = DownsamplingImageProcessor(size: characterImage.bounds.size)
+        characterImage.kf.indicatorType = .activity
+        characterImage.kf.setImage(
+            with: character.image,
+            placeholder: UIImage(named: "placeholderImage"),
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.brightness),
+                .transition(.fade(0.5)),
+                .cacheOriginalImage
+            ]
+        )
     }
 }
 

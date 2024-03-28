@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class CharacterCollection: UICollectionViewController {
     
@@ -60,6 +61,17 @@ final class CharacterCollection: UICollectionViewController {
         : fetchCharacter(from: rickAndMorty?.info.prev)
     }
     
+    @IBAction func clearCasheImage(_ sender: UIBarButtonItem) {
+        let cashe = ImageCache.default
+        cashe.clearMemoryCache()
+        cashe.clearDiskCache { [unowned self] in
+            let alert = UIAlertController(title: "Cashe clear", message: "Cashe cleared", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(okAction)
+            present(alert, animated: true)
+        }
+    }
+    
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Начните поиск"
@@ -94,5 +106,12 @@ extension CharacterCollection: UISearchResultsUpdating {
         }) ?? []
         
         collectionView.reloadData()
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension CharacterCollection: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: (view.window?.windowScene?.screen.bounds.width ?? 0) / 2 - 22, height: 245)
     }
 }

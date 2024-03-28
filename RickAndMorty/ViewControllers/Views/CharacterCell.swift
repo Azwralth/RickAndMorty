@@ -6,35 +6,34 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class CharacterCell: UICollectionViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var characterImage: UIImageView!
     
-    private let networkManager = NetworkManager.shared
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         configureShadow()
-    }
-    
-    override func prepareForReuse() {
-        characterImage.image = nil
     }
     
     func configure(with character: Character?) {
         guard let character else { return }
         nameLabel.text = character.name
         statusLabel.text = "Status: \(character.status ?? "")"
-        networkManager.fetchImage(from: character.image) { [weak self] result in
-            switch result {
-            case .success(let imageData):
-                self?.characterImage.image = UIImage(data: imageData)
-            case .failure(let error):
-                print(error)
-            }
-        }
+        let processor = DownsamplingImageProcessor(size: characterImage.bounds.size)
+        characterImage.kf.indicatorType = .activity
+        characterImage.kf.setImage(
+            with: character.image,
+            placeholder: UIImage(named: "placeholderImage"),
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.brightness),
+                .transition(.fade(0.5)),
+                .cacheOriginalImage
+            ]
+        )
     }
     
     private func configureShadow() {

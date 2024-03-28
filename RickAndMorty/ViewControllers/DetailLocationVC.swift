@@ -14,13 +14,7 @@ class DetailLocationVC: UIViewController {
     
     var location: Location!
     
-    var characters: [Character] = [] {
-        didSet {
-            if characters.count == location.residents.count {
-                characters = characters.sorted { $0.id < $1.id }
-            }
-        }
-    }
+    var characters: [Character] = []
     private let networkManager = NetworkManager.shared
     
     override func viewDidLoad() {
@@ -68,5 +62,11 @@ extension DetailLocationVC: UICollectionViewDataSource {
             }
         }
         return cell
+    }
+}
+
+extension DetailLocationVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: (view.window?.windowScene?.screen.bounds.width ?? 0) / 2 - 22, height: 245)
     }
 }

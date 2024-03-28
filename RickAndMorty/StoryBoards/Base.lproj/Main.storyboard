@@ -79,6 +79,11 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ace-wK-rP5">
                                                     <rect key="frame" x="0.0" y="0.0" width="185" height="236.33333333333334"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9Jt-Sw-96S">
                                                     <rect key="frame" x="2" y="237.33333333333334" width="38.666666666666664" height="41.666666666666657"/>
@@ -107,6 +112,11 @@
                                                 <constraint firstItem="Ace-wK-rP5" firstAttribute="top" secondItem="GJh-ok-e2g" secondAttribute="top" id="vHP-kj-GZK"/>
                                                 <constraint firstItem="Ace-wK-rP5" firstAttribute="leading" secondItem="GJh-ok-e2g" secondAttribute="leading" id="vfd-Km-MSh"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
                                     <constraints>
@@ -136,11 +146,18 @@
                                 <action selector="updateData:" destination="qsj-WJ-vJc" id="IAb-xG-1YV"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" tag="1" title="Next" id="A9Y-CB-YOe">
-                            <connections>
-                                <action selector="updateData:" destination="qsj-WJ-vJc" id="R0I-9r-OMM"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem tag="1" title="Next" id="A9Y-CB-YOe">
+                                <connections>
+                                    <action selector="updateData:" destination="qsj-WJ-vJc" id="R0I-9r-OMM"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="trash.fill" catalog="system" id="rLU-PL-jJj">
+                                <connections>
+                                    <action selector="clearCasheImage:" destination="qsj-WJ-vJc" id="BV7-4a-gYu"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="nextButton" destination="A9Y-CB-YOe" id="3cj-A2-ljY"/>
@@ -273,7 +290,7 @@
                                     <size key="itemSize" width="175" height="225"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="12" minY="0.0" maxX="50" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="12" minY="0.0" maxX="55" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="viewCharacterLocation" id="n2H-PP-i1x" customClass="CharacterLocationCell" customModule="RickAndMorty" customModuleProvider="target">
@@ -288,6 +305,11 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vt5-tr-COz">
                                                             <rect key="frame" x="0.0" y="0.0" width="175" height="181.33333333333334"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="AgN-VE-qHN">
                                                             <rect key="frame" x="2" y="182.33333333333334" width="38.666666666666664" height="41.666666666666657"/>
@@ -316,6 +338,11 @@
                                                         <constraint firstItem="Vt5-tr-COz" firstAttribute="top" secondItem="1ai-xd-hRa" secondAttribute="top" id="hik-Ok-Uke"/>
                                                         <constraint firstAttribute="trailing" secondItem="Vt5-tr-COz" secondAttribute="trailing" id="pVF-yC-AQv"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -455,6 +482,7 @@
     <resources>
         <image name="globe" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="trash.fill" catalog="system" width="117" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
