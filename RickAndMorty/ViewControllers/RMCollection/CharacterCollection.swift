@@ -13,6 +13,7 @@ final class CharacterCollection: UICollectionViewController {
     @IBOutlet var nextButton: UIBarButtonItem!
     @IBOutlet var previewsButton: UIBarButtonItem!
     
+    // MARK: - Private properties
     private var searchController = UISearchController(searchResultsController: nil)
     private var rickAndMorty: RMCharacter?
     private var filterCharacters: [Character] = []
@@ -25,6 +26,7 @@ final class CharacterCollection: UICollectionViewController {
         searchController.isActive && !searchBarIsEmpty
     }
     
+    // MARK: - View life circle app
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchCharacter(from: Link.characterUrl.url)
@@ -72,6 +74,8 @@ final class CharacterCollection: UICollectionViewController {
         }
     }
     
+    
+    // MARK: - Private method
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Начните поиск"
@@ -95,6 +99,7 @@ final class CharacterCollection: UICollectionViewController {
     }
 }
 
+// MARK: - UISearchResultsUpdating
 extension CharacterCollection: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text ?? "")
