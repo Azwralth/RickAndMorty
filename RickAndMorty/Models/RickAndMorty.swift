@@ -59,7 +59,9 @@ struct Location: Decodable {
     var description: String {
         """
         Name: \(name)
+        
         Type: \(type)
+        
         Dimension: \(dimension)
         """
     }
