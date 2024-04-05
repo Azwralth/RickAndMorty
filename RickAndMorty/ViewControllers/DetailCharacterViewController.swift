@@ -12,7 +12,6 @@ final class DetailCharacterViewController: UIViewController {
     
     @IBOutlet var characterImage: UIImageView!
     @IBOutlet var descriptionCharacterLabel: UILabel!
-    @IBOutlet var episodeCollection: UICollectionView!
     
     var character: Character!
 
