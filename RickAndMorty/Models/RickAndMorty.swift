@@ -27,6 +27,7 @@ struct Character: Decodable {
     let gender: String
     let location: LocationInfo
     let image: URL
+    let episode: [URL]
     
     var description: String {
         """
@@ -68,4 +69,21 @@ struct InfoLocation: Decodable {
     let pages: Int
     let next: URL?
     let prev: URL?
+}
+
+struct RMEpisode: Decodable {
+    let info: InfoEpisode
+    let results: [Episode]
+}
+
+struct Episode: Decodable {
+    let id: Int
+    let name: String
+    let air_date: String
+    let episode: String
+}
+
+struct InfoEpisode: Decodable {
+    let count: Int
+    let pages: Int
 }

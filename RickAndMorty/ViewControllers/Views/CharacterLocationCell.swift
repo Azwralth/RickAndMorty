@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class CharacterLocationCell: UICollectionViewCell {
+class CharacterCell: UICollectionViewCell {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var statusLabel: UILabel!
@@ -21,7 +21,8 @@ class CharacterLocationCell: UICollectionViewCell {
         configureShadow()
     }
     
-    func configure(with character: Character) {
+    func configure(with character: Character?) {
+        guard let character else { return }
         nameLabel.text = character.name
         statusLabel.text = "Status: \(character.status ?? "")"
         let processor = DownsamplingImageProcessor(size: characterImage.bounds.size)

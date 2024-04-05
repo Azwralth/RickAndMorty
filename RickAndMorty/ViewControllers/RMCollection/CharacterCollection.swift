@@ -37,7 +37,7 @@ final class CharacterCollection: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
         let chacarter = isFiltering ? filterCharacters[indexPath.item] : rickAndMorty?.results[indexPath.item]
-        if let detailVC = segue.destination as? DetailCharacterVC {
+        if let detailVC = segue.destination as? DetailCharacterViewController {
             detailVC.character = chacarter
         }
     }
@@ -67,7 +67,7 @@ final class CharacterCollection: UICollectionViewController {
         let cashe = ImageCache.default
         cashe.clearMemoryCache()
         cashe.clearDiskCache { [unowned self] in
-            let alert = UIAlertController(title: "Cashe clear", message: "Cashe cleared", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Cashe cleared", message: "The image cache has been cleared successfully.", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default)
             alert.addAction(okAction)
             present(alert, animated: true)
@@ -117,6 +117,6 @@ extension CharacterCollection: UISearchResultsUpdating {
 // MARK: - UICollectionViewDelegateFlowLayout
 extension CharacterCollection: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: (view.window?.windowScene?.screen.bounds.width ?? 0) / 2 - 22, height: 235)
+        CGSize(width: (view.window?.windowScene?.screen.bounds.width ?? 0) / 2 - 22, height: 220)
     }
 }

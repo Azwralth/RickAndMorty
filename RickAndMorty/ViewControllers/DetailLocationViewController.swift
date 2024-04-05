@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailLocationVC: UIViewController {
+class DetailLocationViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var descriptionLabel: UILabel!
@@ -45,27 +45,27 @@ class DetailLocationVC: UIViewController {
 }
 
 
-extension DetailLocationVC: UICollectionViewDataSource {
+extension DetailLocationViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         location.residents.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "viewCharacterLocation", for: indexPath) as! CharacterLocationCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "viewCharacterLocation", for: indexPath) as? CharacterCell
         let characterURL = location.residents[indexPath.item]
-        NetworkManager.shared.fetch(Character.self, from: characterURL) { result in
+        networkManager.fetch(Character.self, from: characterURL) { result in
             switch result {
             case .success(let character):
-                cell.configure(with: character)
+                cell?.configure(with: character)
             case .failure(let error):
                 print(error)
             }
         }
-        return cell
+        return cell ?? UICollectionViewCell()
     }
 }
 
-extension DetailLocationVC: UICollectionViewDelegateFlowLayout {
+extension DetailLocationViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: (view.window?.windowScene?.screen.bounds.width ?? 0) / 2 - 22, height: 235)
     }

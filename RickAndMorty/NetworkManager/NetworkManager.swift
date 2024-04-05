@@ -10,6 +10,7 @@ import Foundation
 enum Link {
     case characterUrl
     case locationUrl
+    case episodeUrl
     
     var url: URL {
         switch self {
@@ -17,6 +18,8 @@ enum Link {
             URL(string: "https://rickandmortyapi.com/api/character")!
         case .locationUrl:
             URL(string: "https://rickandmortyapi.com/api/location")!
+        case .episodeUrl:
+            URL(string: "https://rickandmortyapi.com/api/episode")!
         }
     }
 }
@@ -53,17 +56,5 @@ final class NetworkManager {
                 completion(.failure(.decodingError))
             }
         }.resume()
-    }
-    
-    func fetchImage(from url: URL, completion: @escaping(Result<Data, NetworkError>) -> Void) {
-        DispatchQueue.global().async {
-            guard let imageData = try? Data(contentsOf: url) else {
-                completion(.failure(.noData))
-                return
-            }
-            DispatchQueue.main.async {
-                completion(.success(imageData))
-            }
-        }
     }
 }

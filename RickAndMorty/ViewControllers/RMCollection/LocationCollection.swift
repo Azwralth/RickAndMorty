@@ -33,7 +33,7 @@ final class LocationCollection: UICollectionViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = collectionView.indexPathsForSelectedItems?.first else { return }
         let location = isFiltering ? filterLocations[indexPath.item] : rmLocations?.results[indexPath.item]
-        if let detailVC = segue.destination as? DetailLocationVC {
+        if let detailVC = segue.destination as? DetailLocationViewController {
             detailVC.location = location
         }
     }
