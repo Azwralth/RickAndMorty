@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LocationCell: UICollectionViewCell {
+final class LocationCell: UICollectionViewCell {
     
     @IBOutlet var nameLocationLabel: UILabel!
     @IBOutlet var nameTypeLabel: UILabel!

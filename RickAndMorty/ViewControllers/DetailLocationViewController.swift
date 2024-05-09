@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailLocationViewController: UIViewController {
+final class DetailLocationViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var descriptionLabel: UILabel!

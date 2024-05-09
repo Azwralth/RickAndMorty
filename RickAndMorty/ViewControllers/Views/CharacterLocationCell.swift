@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class CharacterCell: UICollectionViewCell {
+final class CharacterCell: UICollectionViewCell {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var statusLabel: UILabel!

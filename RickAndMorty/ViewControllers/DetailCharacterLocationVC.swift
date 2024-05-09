@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class DetailCharacterLocationVC: UIViewController {
+final class DetailCharacterLocationVC: UIViewController {
     
     @IBOutlet var descriptionCharacterLabel: UILabel!
     @IBOutlet var characterImage: UIImageView!
