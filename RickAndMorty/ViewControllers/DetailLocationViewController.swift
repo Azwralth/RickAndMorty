@@ -11,6 +11,7 @@ final class DetailLocationViewController: UIViewController {
 
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var viewDescription: UIView!
     
     var location: Location!
     
@@ -21,6 +22,8 @@ final class DetailLocationViewController: UIViewController {
         super.viewDidLoad()
         descriptionLabel.text = location.description
         setCharacters()
+        
+        setView()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,6 +44,16 @@ final class DetailLocationViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    private func setView() {
+        viewDescription.layer.masksToBounds = false
+        viewDescription.layer.shadowColor = UIColor.black.cgColor
+        viewDescription.layer.shadowOffset = CGSize(width: 0, height: 2)
+        viewDescription.layer.shadowOpacity = 0.4
+        viewDescription.layer.shadowRadius = 4
+        viewDescription.layer.shouldRasterize = true
+        viewDescription.layer.rasterizationScale = UIScreen.main.scale
     }
 }
 
