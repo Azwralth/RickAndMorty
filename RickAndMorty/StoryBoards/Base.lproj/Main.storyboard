@@ -3,7 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -375,7 +375,7 @@
                                 <rect key="frame" x="16" y="100.5" width="343" height="81"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UYE-5r-GDn">
-                                        <rect key="frame" x="92" y="30.5" width="39.5" height="19.5"/>
+                                        <rect key="frame" x="16" y="30.5" width="39.5" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -385,7 +385,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="oFZ-I3-dUN" secondAttribute="height" multiplier="343:81" id="3Cc-6Y-o4c"/>
                                     <constraint firstItem="UYE-5r-GDn" firstAttribute="centerY" secondItem="oFZ-I3-dUN" secondAttribute="centerY" id="FQj-5b-Gej"/>
-                                    <constraint firstItem="UYE-5r-GDn" firstAttribute="centerX" secondItem="oFZ-I3-dUN" secondAttribute="centerX" constant="-60" id="VVK-oc-oU5"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UYE-5r-GDn" secondAttribute="trailing" constant="20" symbolic="YES" id="Vcq-U8-CxG"/>
+                                    <constraint firstItem="UYE-5r-GDn" firstAttribute="leading" secondItem="oFZ-I3-dUN" secondAttribute="leading" constant="16" id="zVp-Ta-7XD"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

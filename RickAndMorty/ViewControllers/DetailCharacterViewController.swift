@@ -34,32 +34,6 @@ final class DetailCharacterViewController: UIViewController {
             ]
         )
     }
-    
-    private func fetchEpisode(from url: URL, closure: @escaping(Episode) -> Void) {
-        networkManager.fetch(Episode.self, from: url) { result in
-            switch result {
-            case .success(let episode):
-                closure(episode)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-}
-extension DetailCharacterViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        character.episode.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "episods", for: indexPath) as? EpisodeCell else { return UICollectionViewCell() }
-        let episodeUrl = character.episode[indexPath.item]
-        fetchEpisode(from: episodeUrl) { episode in
-            cell.configure(with: episode)
-        }
-        
-        return cell
-    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout

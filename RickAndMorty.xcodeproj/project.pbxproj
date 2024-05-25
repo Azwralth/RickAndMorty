@@ -22,7 +22,6 @@
 		7663EA8F2BB04635004D85B0 /* DetailCharacterLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7663EA8E2BB04635004D85B0 /* DetailCharacterLocationVC.swift */; };
 		768EBF8C2BA6190F003EB98D /* CharacterCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768EBF8B2BA6190F003EB98D /* CharacterCollection.swift */; };
 		768EBF902BA99668003EB98D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768EBF8F2BA99668003EB98D /* NetworkManager.swift */; };
-		76BB1E712BB9C154006DBAAC /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BB1E702BB9C154006DBAAC /* EpisodeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +41,6 @@
 		7663EA8E2BB04635004D85B0 /* DetailCharacterLocationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterLocationVC.swift; sourceTree = "<group>"; };
 		768EBF8B2BA6190F003EB98D /* CharacterCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollection.swift; sourceTree = "<group>"; };
 		768EBF8F2BA99668003EB98D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		76BB1E702BB9C154006DBAAC /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,14 +84,13 @@
 			path = RickAndMorty;
 			sourceTree = "<group>";
 		};
-		76618FB92BAB2CB100A55D8E /* Views */ = {
+		76618FB92BAB2CB100A55D8E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				76618FB32BAAEFC400A55D8E /* LocationCell.swift */,
-				76BB1E702BB9C154006DBAAC /* EpisodeCell.swift */,
 				76618FBC2BAB42B700A55D8E /* CharacterCell.swift */,
 			);
-			path = Views;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		7663EA902BB04684004D85B0 /* RMCollection */ = {
@@ -120,7 +117,7 @@
 				7663EA8E2BB04635004D85B0 /* DetailCharacterLocationVC.swift */,
 				7663EA8C2BAF7831004D85B0 /* DetailLocationViewController.swift */,
 				7663EA902BB04684004D85B0 /* RMCollection */,
-				76618FB92BAB2CB100A55D8E /* Views */,
+				76618FB92BAB2CB100A55D8E /* Cells */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -242,7 +239,6 @@
 				7663EA8F2BB04635004D85B0 /* DetailCharacterLocationVC.swift in Sources */,
 				765737762BA49E0C004F4AF1 /* AppDelegate.swift in Sources */,
 				76618FBD2BAB42B700A55D8E /* CharacterCell.swift in Sources */,
-				76BB1E712BB9C154006DBAAC /* EpisodeCell.swift in Sources */,
 				768EBF902BA99668003EB98D /* NetworkManager.swift in Sources */,
 				76618FB22BAAEF6A00A55D8E /* LocationCollection.swift in Sources */,
 				768EBF8C2BA6190F003EB98D /* CharacterCollection.swift in Sources */,
